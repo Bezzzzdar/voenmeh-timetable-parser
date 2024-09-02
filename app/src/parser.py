@@ -48,6 +48,9 @@ class Lesson():
         
         self.start_time = start_time
         self.end_time = self.start_time + timedelta(hours=1, minutes=30)
+
+        self.start_time = str(self.start_time)[:-3]
+        self.end_time = str(self.end_time)[:-3]
     
     def __str__(self) -> str:
         return f'name = {self.name}, type = {self.type}, lecturer = {self.lecturer}, classroom = {self.classroom}, weekcode = {self.weekcode}, day of week = {self.day_of_week}, start time = {self.start_time}, end time = {self.end_time}, color = {self.color}'
@@ -108,10 +111,13 @@ def parse_timetable(group_name: str):
                     
                     # Проверяем наличие Lecturers и ShortName
                     lecturer_element = lesson.find('Lecturer')
-                    lecturer = lecturer_element.find('ShortName').text if lecturer_element and lecturer_element.find('ShortName') else "Не указано"
+                    lecturer = lecturer_element.find('ShortName').text if lecturer_element and lecturer_element.find('ShortName') else "не указан"
                     
-                    classroom = lesson.find('Classroom').text.strip() if lesson.find('Classroom') else "Не указано"
-                    classroom = classroom[:-1]
+                    classroom = lesson.find('Classroom').text.strip()
+                    if classroom == "":
+                        classroom = "не указана"
+                    else:
+                        classroom = classroom[:-1]
                     week_code = lesson.find('WeekCode').text if lesson.find('WeekCode') else "Не указано"
                     
                     lesson_class = Lesson(discipline_name, discipline_type, lecturer, classroom, int(week_code), day_title, time_delta)
