@@ -16,20 +16,22 @@
 
 from parser import parse_timetable
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QHBoxLayout, QVBoxLayout, QPushButton,QWidget, QLineEdit, QSpacerItem, QSizePolicy, QComboBox
-from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QApplication, QMainWindow, QHBoxLayout, QVBoxLayout, QPushButton,QWidget, QLineEdit, QSpacerItem, QSizePolicy, QComboBox 
+from PyQt5.QtCore import Qt, QSettings
 
 from icons import _get_icon_from_base64, base64_update_button_icon_white, base64_edit_button_icon_white, base64_app_icon
 
 import json
 import os
 from pathlib import Path
+import datetime
 
-from timetable_widgets import EvenWeekTimetableScrollArea, OddWeekTimetableScrollArea, LessonWidget
+from timetable_widgets import EvenWeekTimetableScrollArea, OddWeekTimetableScrollArea, LessonWidget, _is_even_week, semester_start_date
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.settings = QSettings("Company", "TimetableApp")
         self.__initUI()
     def __initUI(self):
         """ Initialazing main window"""
@@ -143,6 +145,37 @@ class MainWindow(QMainWindow):
 
         self.top_layout.setAlignment(Qt.AlignTop)
         self.layout.addLayout(self.top_layout)
+
+        try:
+            self.group_number = self.settings.value('last_group_number')
+            self.group_number_input.setText(self.group_number)
+
+            if self.group_number == '':
+                return
+            
+            if not os.path.exists(Path(f'./app/saved_timetables/{self.group_number}_timetable.json')):
+                parse_timetable(self.group_number)
+
+            with open(Path(f'./app/saved_timetables/{self.group_number}_timetable.json'), 'r', encoding='utf-8') as json_file:
+                self.timetable = json.load(json_file)
+
+            self.timetable_widget_even = EvenWeekTimetableScrollArea(self, self.timetable)
+            self.timetable_widget_odd = OddWeekTimetableScrollArea(self, self.timetable)
+            self.set_current_week()
+
+            self.layout.addWidget(self.timetable_widget_even)
+            self.layout.addWidget(self.timetable_widget_odd)
+        except:
+            pass
+
+    def set_current_week(self):
+        is_even = _is_even_week(semester_start_date)
+        if is_even:
+            self.timetable_widget_odd.hide()
+            self.week_combo_box.setCurrentText('Чётная неделя')
+        else:
+            self.timetable_widget_even.hide()
+            self.week_combo_box.setCurrentText('Нечётная неделя')
     
     def week_changed(self):
         selected_week = self.week_combo_box.currentText()
@@ -164,22 +197,27 @@ class MainWindow(QMainWindow):
         except:
             pass
 
-        group_number = self.group_number_input.text()
+        self.group_number = self.group_number_input.text()
+        if self.group_number == '':
+            return
 
-        if not os.path.exists(Path(f'./app/saved_timetables/{group_number}_timetable.json')):
-            parse_timetable(group_number)
+        if not os.path.exists(Path(f'./app/saved_timetables/{self.group_number}_timetable.json')):
+            parse_timetable(self.group_number)
 
-        with open(Path(f'./app/saved_timetables/{group_number}_timetable.json'), 'r', encoding='utf-8') as json_file:
+        with open(Path(f'./app/saved_timetables/{self.group_number}_timetable.json'), 'r', encoding='utf-8') as json_file:
             self.timetable = json.load(json_file)
 
         self.timetable_widget_even = EvenWeekTimetableScrollArea(self, self.timetable)
         self.timetable_widget_odd = OddWeekTimetableScrollArea(self, self.timetable)
-        self.timetable_widget_odd.hide()
+
+        self.set_current_week()
 
         self.layout.addWidget(self.timetable_widget_even)
         self.layout.addWidget(self.timetable_widget_odd)
-        
 
+    def closeEvent(self, event):
+        self.settings.setValue('last_group_number', f'{self.group_number}')
+        super().closeEvent(event)
 
 def main():
     app = QApplication(sys.argv)

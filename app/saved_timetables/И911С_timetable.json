@@ -9,8 +9,8 @@
                                                 "classroom": "346",
                                                 "week_code": 1,
                                                 "day_of_week": "Понедельник",
-                                                "start_time": "14:55:00",
-                                                "end_time": "16:25:00"
+                                                "start_time": "14:55",
+                                                "end_time": "16:25"
                                         }
                                 ]
                         }
@@ -24,8 +24,8 @@
                                                 "classroom": "278",
                                                 "week_code": 2,
                                                 "day_of_week": "Понедельник",
-                                                "start_time": "14:55:00",
-                                                "end_time": "16:25:00"
+                                                "start_time": "14:55",
+                                                "end_time": "16:25"
                                         }
                                 ]
                         }
@@ -39,8 +39,8 @@
                                                 "classroom": "259",
                                                 "week_code": 1,
                                                 "day_of_week": "Понедельник",
-                                                "start_time": "16:45:00",
-                                                "end_time": "18:15:00"
+                                                "start_time": "16:45",
+                                                "end_time": "18:15"
                                         }
                                 ]
                         }
@@ -54,8 +54,8 @@
                                                 "classroom": "259",
                                                 "week_code": 2,
                                                 "day_of_week": "Понедельник",
-                                                "start_time": "16:45:00",
-                                                "end_time": "18:15:00"
+                                                "start_time": "16:45",
+                                                "end_time": "18:15"
                                         }
                                 ]
                         }
@@ -69,8 +69,8 @@
                                                 "classroom": "259",
                                                 "week_code": 1,
                                                 "day_of_week": "Понедельник",
-                                                "start_time": "18:30:00",
-                                                "end_time": "20:00:00"
+                                                "start_time": "18:30",
+                                                "end_time": "20:00"
                                         }
                                 ]
                         }
@@ -84,8 +84,8 @@
                                                 "classroom": "259",
                                                 "week_code": 2,
                                                 "day_of_week": "Понедельник",
-                                                "start_time": "18:30:00",
-                                                "end_time": "20:00:00"
+                                                "start_time": "18:30",
+                                                "end_time": "20:00"
                                         }
                                 ]
                         }
@@ -99,8 +99,8 @@
                                                 "classroom": "278",
                                                 "week_code": 2,
                                                 "day_of_week": "Понедельник",
-                                                "start_time": "20:05:00",
-                                                "end_time": "21:35:00"
+                                                "start_time": "20:05",
+                                                "end_time": "21:35"
                                         }
                                 ]
                         }
@@ -116,8 +116,8 @@
                                                 "classroom": "315",
                                                 "week_code": 1,
                                                 "day_of_week": "Среда",
-                                                "start_time": "12:40:00",
-                                                "end_time": "14:10:00"
+                                                "start_time": "12:40",
+                                                "end_time": "14:10"
                                         }
                                 ]
                         }
@@ -131,8 +131,8 @@
                                                 "classroom": "313а",
                                                 "week_code": 2,
                                                 "day_of_week": "Среда",
-                                                "start_time": "12:40:00",
-                                                "end_time": "14:10:00"
+                                                "start_time": "12:40",
+                                                "end_time": "14:10"
                                         }
                                 ]
                         }
@@ -146,8 +146,8 @@
                                                 "classroom": "259",
                                                 "week_code": 1,
                                                 "day_of_week": "Среда",
-                                                "start_time": "14:55:00",
-                                                "end_time": "16:25:00"
+                                                "start_time": "14:55",
+                                                "end_time": "16:25"
                                         }
                                 ]
                         }
@@ -161,8 +161,8 @@
                                                 "classroom": "259",
                                                 "week_code": 2,
                                                 "day_of_week": "Среда",
-                                                "start_time": "14:55:00",
-                                                "end_time": "16:25:00"
+                                                "start_time": "14:55",
+                                                "end_time": "16:25"
                                         }
                                 ]
                         }
@@ -176,8 +176,8 @@
                                                 "classroom": "443",
                                                 "week_code": 1,
                                                 "day_of_week": "Среда",
-                                                "start_time": "16:45:00",
-                                                "end_time": "18:15:00"
+                                                "start_time": "16:45",
+                                                "end_time": "18:15"
                                         }
                                 ]
                         }
@@ -191,8 +191,8 @@
                                                 "classroom": "443",
                                                 "week_code": 2,
                                                 "day_of_week": "Среда",
-                                                "start_time": "16:45:00",
-                                                "end_time": "18:15:00"
+                                                "start_time": "16:45",
+                                                "end_time": "18:15"
                                         }
                                 ]
                         }
@@ -206,8 +206,8 @@
                                                 "classroom": "346",
                                                 "week_code": 1,
                                                 "day_of_week": "Среда",
-                                                "start_time": "18:30:00",
-                                                "end_time": "20:00:00"
+                                                "start_time": "18:30",
+                                                "end_time": "20:00"
                                         }
                                 ]
                         }
@@ -221,8 +221,8 @@
                                                 "classroom": "346",
                                                 "week_code": 2,
                                                 "day_of_week": "Среда",
-                                                "start_time": "18:30:00",
-                                                "end_time": "20:00:00"
+                                                "start_time": "18:30",
+                                                "end_time": "20:00"
                                         }
                                 ]
                         }
@@ -234,12 +234,12 @@
                                 "ДОП. ПОДГОТОВКА": [
                                         {
                                                 "discipline_type": "Практика",
-                                                "lecturer": "Не указано",
-                                                "classroom": "",
+                                                "lecturer": "не указан",
+                                                "classroom": "не указана",
                                                 "week_code": 1,
                                                 "day_of_week": "Четверг",
-                                                "start_time": "9:00:00",
-                                                "end_time": "10:30:00"
+                                                "start_time": "9:00",
+                                                "end_time": "10:30"
                                         }
                                 ]
                         }
@@ -249,12 +249,12 @@
                                 "ДОП. ПОДГОТОВКА": [
                                         {
                                                 "discipline_type": "Практика",
-                                                "lecturer": "Не указано",
-                                                "classroom": "",
+                                                "lecturer": "не указан",
+                                                "classroom": "не указана",
                                                 "week_code": 2,
                                                 "day_of_week": "Четверг",
-                                                "start_time": "9:00:00",
-                                                "end_time": "10:30:00"
+                                                "start_time": "9:00",
+                                                "end_time": "10:30"
                                         }
                                 ]
                         }
@@ -264,12 +264,12 @@
                                 "ДОП. ПОДГОТОВКА": [
                                         {
                                                 "discipline_type": "Практика",
-                                                "lecturer": "Не указано",
-                                                "classroom": "",
+                                                "lecturer": "не указан",
+                                                "classroom": "не указана",
                                                 "week_code": 1,
                                                 "day_of_week": "Четверг",
-                                                "start_time": "10:50:00",
-                                                "end_time": "12:20:00"
+                                                "start_time": "10:50",
+                                                "end_time": "12:20"
                                         }
                                 ]
                         }
@@ -279,12 +279,12 @@
                                 "ДОП. ПОДГОТОВКА": [
                                         {
                                                 "discipline_type": "Практика",
-                                                "lecturer": "Не указано",
-                                                "classroom": "",
+                                                "lecturer": "не указан",
+                                                "classroom": "не указана",
                                                 "week_code": 2,
                                                 "day_of_week": "Четверг",
-                                                "start_time": "10:50:00",
-                                                "end_time": "12:20:00"
+                                                "start_time": "10:50",
+                                                "end_time": "12:20"
                                         }
                                 ]
                         }
@@ -294,12 +294,12 @@
                                 "ДОП. ПОДГОТОВКА": [
                                         {
                                                 "discipline_type": "Практика",
-                                                "lecturer": "Не указано",
-                                                "classroom": "",
+                                                "lecturer": "не указан",
+                                                "classroom": "не указана",
                                                 "week_code": 1,
                                                 "day_of_week": "Четверг",
-                                                "start_time": "12:40:00",
-                                                "end_time": "14:10:00"
+                                                "start_time": "12:40",
+                                                "end_time": "14:10"
                                         }
                                 ]
                         }
@@ -309,12 +309,12 @@
                                 "ДОП. ПОДГОТОВКА": [
                                         {
                                                 "discipline_type": "Практика",
-                                                "lecturer": "Не указано",
-                                                "classroom": "",
+                                                "lecturer": "не указан",
+                                                "classroom": "не указана",
                                                 "week_code": 2,
                                                 "day_of_week": "Четверг",
-                                                "start_time": "12:40:00",
-                                                "end_time": "14:10:00"
+                                                "start_time": "12:40",
+                                                "end_time": "14:10"
                                         }
                                 ]
                         }
@@ -325,11 +325,11 @@
                                         {
                                                 "discipline_type": "Лекция",
                                                 "lecturer": "Становая А.А.",
-                                                "classroom": "",
+                                                "classroom": "не указана",
                                                 "week_code": 1,
                                                 "day_of_week": "Четверг",
-                                                "start_time": "16:45:00",
-                                                "end_time": "18:15:00"
+                                                "start_time": "16:45",
+                                                "end_time": "18:15"
                                         }
                                 ]
                         }
@@ -343,8 +343,8 @@
                                                 "classroom": "316",
                                                 "week_code": 1,
                                                 "day_of_week": "Четверг",
-                                                "start_time": "18:30:00",
-                                                "end_time": "20:00:00"
+                                                "start_time": "18:30",
+                                                "end_time": "20:00"
                                         }
                                 ]
                         }
@@ -360,8 +360,8 @@
                                                 "classroom": "259",
                                                 "week_code": 1,
                                                 "day_of_week": "Пятница",
-                                                "start_time": "10:50:00",
-                                                "end_time": "12:20:00"
+                                                "start_time": "10:50",
+                                                "end_time": "12:20"
                                         }
                                 ]
                         }
@@ -375,8 +375,8 @@
                                                 "classroom": "259",
                                                 "week_code": 1,
                                                 "day_of_week": "Пятница",
-                                                "start_time": "12:40:00",
-                                                "end_time": "14:10:00"
+                                                "start_time": "12:40",
+                                                "end_time": "14:10"
                                         }
                                 ]
                         }
@@ -390,8 +390,8 @@
                                                 "classroom": "259",
                                                 "week_code": 2,
                                                 "day_of_week": "Пятница",
-                                                "start_time": "12:40:00",
-                                                "end_time": "14:10:00"
+                                                "start_time": "12:40",
+                                                "end_time": "14:10"
                                         }
                                 ]
                         }
@@ -405,8 +405,8 @@
                                                 "classroom": "278",
                                                 "week_code": 1,
                                                 "day_of_week": "Пятница",
-                                                "start_time": "14:55:00",
-                                                "end_time": "16:25:00"
+                                                "start_time": "14:55",
+                                                "end_time": "16:25"
                                         }
                                 ]
                         }
@@ -420,8 +420,8 @@
                                                 "classroom": "278",
                                                 "week_code": 2,
                                                 "day_of_week": "Пятница",
-                                                "start_time": "14:55:00",
-                                                "end_time": "16:25:00"
+                                                "start_time": "14:55",
+                                                "end_time": "16:25"
                                         }
                                 ]
                         }
@@ -435,8 +435,8 @@
                                                 "classroom": "324",
                                                 "week_code": 1,
                                                 "day_of_week": "Пятница",
-                                                "start_time": "16:45:00",
-                                                "end_time": "18:15:00"
+                                                "start_time": "16:45",
+                                                "end_time": "18:15"
                                         }
                                 ]
                         }
@@ -450,8 +450,8 @@
                                                 "classroom": "324",
                                                 "week_code": 2,
                                                 "day_of_week": "Пятница",
-                                                "start_time": "16:45:00",
-                                                "end_time": "18:15:00"
+                                                "start_time": "16:45",
+                                                "end_time": "18:15"
                                         }
                                 ]
                         }
@@ -465,8 +465,8 @@
                                                 "classroom": "346",
                                                 "week_code": 2,
                                                 "day_of_week": "Пятница",
-                                                "start_time": "18:30:00",
-                                                "end_time": "20:00:00"
+                                                "start_time": "18:30",
+                                                "end_time": "20:00"
                                         }
                                 ]
                         }
@@ -482,8 +482,8 @@
                                                 "classroom": "274",
                                                 "week_code": 1,
                                                 "day_of_week": "Суббота",
-                                                "start_time": "9:00:00",
-                                                "end_time": "10:30:00"
+                                                "start_time": "9:00",
+                                                "end_time": "10:30"
                                         }
                                 ]
                         }
@@ -497,8 +497,8 @@
                                                 "classroom": "346",
                                                 "week_code": 2,
                                                 "day_of_week": "Суббота",
-                                                "start_time": "9:00:00",
-                                                "end_time": "10:30:00"
+                                                "start_time": "9:00",
+                                                "end_time": "10:30"
                                         }
                                 ]
                         }
@@ -512,8 +512,8 @@
                                                 "classroom": "346",
                                                 "week_code": 1,
                                                 "day_of_week": "Суббота",
-                                                "start_time": "10:50:00",
-                                                "end_time": "12:20:00"
+                                                "start_time": "10:50",
+                                                "end_time": "12:20"
                                         }
                                 ]
                         }
@@ -527,8 +527,8 @@
                                                 "classroom": "346",
                                                 "week_code": 2,
                                                 "day_of_week": "Суббота",
-                                                "start_time": "10:50:00",
-                                                "end_time": "12:20:00"
+                                                "start_time": "10:50",
+                                                "end_time": "12:20"
                                         }
                                 ]
                         }

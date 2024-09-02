@@ -18,6 +18,8 @@ from PyQt5.QtWidgets import QHBoxLayout, QVBoxLayout, QWidget, QSpacerItem, QSiz
 from PyQt5.QtCore import Qt
 import datetime
 
+semester_start_date = datetime.date(2024, 9, 1)
+
 class LessonWidget(QDialog):
     def __init__(self, parent, name, type, lecturer, classroom, weekcode, day_of_week, start_time, end_time):
         super().__init__(parent)
@@ -29,8 +31,8 @@ class LessonWidget(QDialog):
             self.vline_color = 'green'
         elif self.type == "Лабораторная":
             self.vline_color = 'blue'
-        self.lecturer = lecturer
-        self.classroom = classroom
+        self.lecturer = 'Преподаватель: ' + lecturer
+        self.classroom = 'Аудитория ' + classroom
         self.weekcode = weekcode
         self.day_of_week = day_of_week
         self.start_time = start_time
@@ -38,7 +40,7 @@ class LessonWidget(QDialog):
         self.__initUI()
     
     def __initUI(self):
-        self.setFixedSize(440, 60)
+        self.setFixedSize(440, 80)
         self.setStyleSheet("""
             QDialog {
                 background-color: #434B4D;
@@ -64,7 +66,7 @@ class LessonWidget(QDialog):
         self.vline.setStyleSheet(f"background-color: {self.vline_color};")
         self.layout.addWidget(self.vline)
 
-        self.lesson_label = QLabel(f'{self.name}\n{self.classroom}, {self.type}', self)
+        self.lesson_label = QLabel(f'{self.name}\n{self.classroom}\n{self.type}', self)
         self.lesson_label.setStyleSheet("""
             QLabel {
                 font-size: 14px;
@@ -72,7 +74,6 @@ class LessonWidget(QDialog):
                 background-color: #434B4D;
             }
         """)
-        self.lesson_label.setFixedSize(150, 40)
         self.layout.addWidget(self.lesson_label)
 
         separator = QSpacerItem(50, 10, QSizePolicy.Expanding, QSizePolicy.Minimum)
@@ -97,15 +98,39 @@ class EvenWeekTimetableScrollArea(QScrollArea):
     def __initUI(self, timetable):
         self.setStyleSheet("""
             QWidget {
-                background-color: #293133;
+                background-color: #293133;        
+            }
+            QScrollArea {
+                background-color: #434B4D;
                 border: none;
+            }
+            QScrollBar:vertical {
+                background-color: #434B4D;
+                border-radius: 4px;
+                width: 8px;
+                margin: 0px 0px 0px 0px;
+            }
+            QScrollBar::handle:vertical {
+                background-color: #B0B0B0;
+                min-height: 20px;
+                border-radius: 4px;
+            }
+            QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+                height: 0px;
+            }
+            QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+                background: none;
             }
         """)
         self.content_widget = QWidget()
         self.layout = QVBoxLayout()
 
         days_of_week = []
-        current_week, _ = _get_week_dates()
+        is_even = _is_even_week(semester_start_date)
+        if is_even:
+            current_week, _ = _get_week_dates()
+        else:
+            _, current_week = _get_week_dates() 
         
         self.monday_layout = QVBoxLayout()
         self.monday_selection = QLabel(f'Понедельник, {current_week[0]}', self)
@@ -221,18 +246,42 @@ class OddWeekTimetableScrollArea(QScrollArea):
     def __initUI(self, timetable):
         self.setStyleSheet("""
             QWidget {
-                background-color: #293133;
+                background-color: #293133;        
+            }
+            QScrollArea {
+                background-color: #434B4D;
                 border: none;
+            }
+            QScrollBar:vertical {
+                background-color: #434B4D;
+                border-radius: 4px;
+                width: 8px;
+                margin: 0px 0px 0px 0px;
+            }
+            QScrollBar::handle:vertical {
+                background-color: #B0B0B0;
+                min-height: 20px;
+                border-radius: 4px;
+            }
+            QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+                height: 0px;
+            }
+            QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+                background: none;
             }
         """)
         self.content_widget = QWidget()
         self.layout = QVBoxLayout()
 
         days_of_week = []
-        _, next_week = _get_week_dates()
+        is_even = _is_even_week(semester_start_date) 
+        if is_even:
+            _, current_week = _get_week_dates()
+        else:
+            current_week, _ = _get_week_dates()
         
         self.monday_layout = QVBoxLayout()
-        self.monday_selection = QLabel(f'Понедельник, {next_week[0]}', self)
+        self.monday_selection = QLabel(f'Понедельник, {current_week[0]}', self)
         self.monday_selection.setStyleSheet("""
             QLabel {
                 font-size: 16px;
@@ -243,7 +292,7 @@ class OddWeekTimetableScrollArea(QScrollArea):
         days_of_week.append(self.monday_layout)
 
         self.tuesday_layout = QVBoxLayout()
-        self.tuesday_selection = QLabel(f'Вторник, {next_week[0] + datetime.timedelta(days=1)}', self)
+        self.tuesday_selection = QLabel(f'Вторник, {current_week[0] + datetime.timedelta(days=1)}', self)
         self.tuesday_selection.setStyleSheet("""
             QLabel {
                 font-size: 16px;
@@ -254,7 +303,7 @@ class OddWeekTimetableScrollArea(QScrollArea):
         days_of_week.append(self.tuesday_layout)
 
         self.wednesday_layout = QVBoxLayout()
-        self.wednesday_selection = QLabel(f'Среда, {next_week[0] + datetime.timedelta(days=2)}', self)
+        self.wednesday_selection = QLabel(f'Среда, {current_week[0] + datetime.timedelta(days=2)}', self)
         self.wednesday_selection.setStyleSheet("""
             QLabel {
                 font-size: 16px;
@@ -265,7 +314,7 @@ class OddWeekTimetableScrollArea(QScrollArea):
         days_of_week.append(self.wednesday_layout)
 
         self.thursday_layout = QVBoxLayout()
-        self.thursday_selection = QLabel(f'Четверг, {next_week[0] + datetime.timedelta(days=3)}', self)
+        self.thursday_selection = QLabel(f'Четверг, {current_week[0] + datetime.timedelta(days=3)}', self)
         self.thursday_selection.setStyleSheet("""
             QLabel {
                 font-size: 16px;
@@ -276,7 +325,7 @@ class OddWeekTimetableScrollArea(QScrollArea):
         days_of_week.append(self.thursday_layout)
 
         self.friday_layout = QVBoxLayout()
-        self.friday_selection = QLabel(f'Пятница, {next_week[0] + datetime.timedelta(days=4)}', self)
+        self.friday_selection = QLabel(f'Пятница, {current_week[0] + datetime.timedelta(days=4)}', self)
         self.friday_selection.setStyleSheet("""
             QLabel {
                 font-size: 16px;
@@ -287,7 +336,7 @@ class OddWeekTimetableScrollArea(QScrollArea):
         days_of_week.append(self.friday_layout)
 
         self.saturday_layout = QVBoxLayout()
-        self.saturday_selection = QLabel(f'Суббота, {next_week[0] + datetime.timedelta(days=5)}', self)
+        self.saturday_selection = QLabel(f'Суббота, {current_week[0] + datetime.timedelta(days=5)}', self)
         self.saturday_selection.setStyleSheet("""
             QLabel {
                 font-size: 16px;
@@ -356,3 +405,18 @@ def _get_week_dates(reference_date=None):
     next_week = [start_of_next_week, end_of_next_week]
 
     return current_week, next_week
+
+def _is_even_week(start_date, reference_date=None):
+    if reference_date is None:
+        reference_date = datetime.date.today()
+
+    # Вычисляем разницу в днях между текущей датой и началом семестра
+    days_difference = (reference_date - start_date).days
+
+    # Вычисляем номер недели (0 = первая неделя)
+    week_number = days_difference // 7
+
+    # Если номер недели четный, то это четная неделя, иначе - нечетная
+    is_even = week_number % 2 == 1  # Начинаем с нечетной, поэтому 1 - это четная
+
+    return is_even
