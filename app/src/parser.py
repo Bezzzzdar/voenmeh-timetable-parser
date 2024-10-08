@@ -73,7 +73,7 @@ class Lesson():
         }
 
 def parse_timetable(group_name: str):
-    xml_url = "https://www.voenmeh.ru/templates/jd_atlanta/js/TimetableGroup47.xml"
+    xml_url = "https://voenmeh.ru/wp-content/themes/Avada-Child-Theme-Voenmeh/_voenmeh_grafics/TimetableGroup50.xml"
     response = requests.get(xml_url)
 
     # Проверка успешности запроса
@@ -85,7 +85,6 @@ def parse_timetable(group_name: str):
         # Парсим XML с помощью BeautifulSoup
         soup = BeautifulSoup(content, 'lxml-xml')
 
-        # Ищем группу И911С
         group = soup.find('Group', {'Number': f'{group_name}'})
         timetable = {}
         if group:
